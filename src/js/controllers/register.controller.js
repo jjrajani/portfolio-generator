@@ -1,11 +1,13 @@
-function RegisterController () {
+function RegisterController (UserService) {
   let vm = this;
   vm.createUser = createUser;
 
   function createUser(user) {
-    console.log(user);
+    UserService.signup(user).then( res => {
+      console.log(res)
+    });
   } 
 }
 
-RegisterController.$inject = [];
+RegisterController.$inject = ['UserService'];
 export { RegisterController };

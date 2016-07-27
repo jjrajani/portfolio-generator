@@ -15,6 +15,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/register.tpl.html',
       controller: 'RegisterController as vm'
     })
+    .state('root.login', {
+      url: '/login',
+      templateUrl: 'templates/login.tpl.html',
+      controller: 'LoginController as vm'
+    });
 
     $urlRouterProvider.otherwise('/');
 
