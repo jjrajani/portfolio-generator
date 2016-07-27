@@ -4,7 +4,9 @@ function LoginController (UserService) {
   vm.loginUser = loginUser;
 
   function loginUser(user) {
-    UserService.login(user)
+    UserService.login(user).then( res => {
+      console.log(res)
+    });
   }
   
 

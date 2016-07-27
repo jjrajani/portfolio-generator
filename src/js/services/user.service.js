@@ -5,11 +5,12 @@ function UserService (SERVER, $http) {
 
   function signup (user) {
     console.log(user)
-    $http.post(SERVER.URL + 'signup', user);
+    return $http.post(SERVER.URL + 'signup', user);
   }
 
   function login (user) {
     console.log(user)
+    return $http.post(SERVER.URL + 'login', user);
   }
 
 }
