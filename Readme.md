@@ -1,4 +1,4 @@
-Hackathon - Portfolio Builder (Team Tim)
+#### Hackathon - Portfolio Builder (Team Tim)
 
 Sign up and watch your career take off. It's raining jobs!
 Create an account
@@ -11,11 +11,11 @@ Authorization
 
 All authorized requests unless otherwise mentioned require a "Access-Token" header to be present. Users are assigned an Auth Token during account creation. The access token can be retrieved at any time via the "/login" route.
 
-Errors
+##### Errors
 
 Any request that fails to be processed will return an appropriate status code as a response as well as a JSON object with an "errors" property providing any additional data to solve the problem.
 
-Routes
+##### Routes
 
 POST /signup
 
@@ -58,7 +58,7 @@ Status Code: Returns 201 Created on Success and 422 Unprocessable Entity in case
 }
 ```
 
-POST /login
+##### POST /login
 
 This route exists 'signs a user in' and gets their info.
 Params:
@@ -67,15 +67,17 @@ username: string
 password: string
 Status Codes: Returns 200 on success and 401 on failure.
 
-Request:
-
+**Request:**
+```
 {
   "username": "tbone",
   "password": "iheartquiteriot"
 }
-Response:
-
+```
+**Response:**
+```
 {
   "access_token": "7774743beeb3c26dfdd80213ba1b9097",
   "username": "tbone"
 }
+```
