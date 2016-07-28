@@ -1,7 +1,8 @@
-function ProfileController(ProfileService) {
+function ProfileController(ProfileService, $state, UserService) {
 
   let vm = this;
   vm.editMode = false;
+  vm.updateProfile = updateProfile;
   init()
 
   function init() {
@@ -11,7 +12,15 @@ function ProfileController(ProfileService) {
     })
   }
 
+  function updateProfile (profile) {
+    ProfileService.updateProfile(profile).then( res => {
+      $state.go('root.profile', {username: UserService.getUser()});
+    })
+  }
+
+
+
 }
 
-ProfileController.$inject = ['ProfileService'];
+ProfileController.$inject = ['ProfileService', '$state', 'UserService'];
 export { ProfileController };
