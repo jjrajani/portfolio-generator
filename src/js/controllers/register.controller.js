@@ -1,13 +1,13 @@
-function RegisterController (UserService) {
+function RegisterController (UserService, $state) {
   let vm = this;
   vm.createUser = createUser;
 
   function createUser(user) {
     UserService.signup(user).then( res => {
-      console.log(res)
+      $state.go('root.home')
     });
   } 
 }
 
-RegisterController.$inject = ['UserService'];
+RegisterController.$inject = ['UserService', '$state'];
 export { RegisterController };
