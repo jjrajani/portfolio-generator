@@ -65,46 +65,43 @@
   </div>
     
   <div class="editable">
-    <button class="button">Veiw Portfolio</button>
+    <button class="button portfolio">Veiw Portfolio</button>
     <i ng-click="vm.editMode = !vm.editMode" class="fa fa-pencil" aria-hidden="true"></i>
-    <form>
+    <form ng-submit="vm.updateProfile(vm.profile)">
       <p class="git-hub-username"><span class="edit-label">Github User Name: </span>{{ vm.profile.github_username }}</p>
       <p class="control" ng-class="{ hidden : !vm.editMode }">
-        <input type="text" name="github-username" placeholder="Github User Name">
+        <input type="text" name="github-username" placeholder="Github User Name" ng-model="vm.profile.github_username">
       </p>
-
+<!--
       <p class="email"><span class="edit-label">Email: </span>jjrajani@gmail.com</p>
       <p class="control" ng-class="{ hidden : !vm.editMode }">
         <input type="email" name="email" placeholder="Email">
+      </p>-->
+
+      <p class="location"><span class="edit-label">Location: </span>{{ vm.profile.location }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="text" name="location" placeholder="Location" ng-model="vm.profile.location">
       </p>
 
-      <p class="location"><span class="edit-label">Location: </span>Atl, Ga</p>
+      <p class="profile-title"><span class="edit-label">Portfolio Page Title: </span>{{ vm.profile.page_title }}</p>
       <p class="control" ng-class="{ hidden : !vm.editMode }">
-        <input type="text" name="location" placeholder="Location">
-      </p>
-
-      <p class="profile-title"><span class="edit-label">Portfolio Page Title: </span>Inspirational Aspirations</p>
-      <p class="control" ng-class="{ hidden : !vm.editMode }">
-        <input type="text" name="page-title" placeholder="Portfolio Title">
+        <input type="text" name="page-title" placeholder="Portfolio Title" ng-model="vm.profile.page_title">
       </p>
 
         <span class="select">
-          <select>
+          <select ng-model="vm.portfolio.layout_choice">
             <option>Layout</option>
-            <option>HumDrum</option>
-            <option>DerDum</option>
+            <option value="1">HumDrum</option>
+            <option value="2">HerpDerp</option>
           </select>
         </span>
 
-      <p><span class="edit-label">Bio: </span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p><span class="edit-label">Bio: </span>{{ vm.profile.bio }}</p>
       <p class="control" ng-class="{ hidden : !vm.editMode }">
-        <textarea></textarea>
+        <textarea ng-model="vm.profile.bio"></textarea>
       </p>
+
+      <button class="button save">Save</button>
 
     </form>
 
