@@ -1,5 +1,11 @@
 @import 'bulma'; 
 
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 .jumbotron {
   height: 400px;
   width: 1200px;
@@ -31,14 +37,17 @@
 .user-info-general {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   float: left;
   margin: 50px 0;
   margin-left: 5%;
-  max-width: 30%;
+  width: 30%;
+  border: solid purple 1px;
   .followers {
-    // width: 200px;
+    border: solid black 1px;
     display: flex;
+    flex-direction: column;
+    width: 100%;
     p {
       display: flex;
       justify-content: center;
@@ -60,26 +69,76 @@
   }
   .stared-repos {
     // width: 200px;
+    width: 100%;
+    border: solid black 1px;
     display: flex;
     flex-direction: column;
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      margin: 10px 0;
+    }
     .stared-repo {
       display: flex;
       flex-direction: column;
-    }
-    .header {
-      display: flex;
-      justify-content: space-between;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          margin: 5px 0 5px 5px;
+          font-weight: 600;
+          font-size: 1em;
+        }
+        i {
+          margin-right: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      p {
+          margin: 0 0 5px 10px;
+          font-weight: 300;
+          font-size: 1em;
+        }
     }
   }
 }
 
 .editable {
   float: right;
+  border: solid black 1px;
+  width: 55%;
+  margin: 50px 5% 0 0;
+  .edit-label {
+    font-weight: 600;
+  }
+  p {
+    min-height: 30px;
+    width: 94%;
+    margin: 5px 3%;
+  }
+  form {
+    width: 94%;
+    margin: 5px 3%;
+  }
+  .select {
+   margin: 5px 3%; 
+  }
+  textarea {
+    display: flex;
+    width: 100%;
+    height: 125px;
+  }
 }
 
 .profile {
   .bottom {
-    clear: both;
+    float: left;
+    width: 30%;
+    margin: 20px 0 0 5%;
+    border: solid black 1px;
   }
 }
 
