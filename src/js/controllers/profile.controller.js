@@ -1,7 +1,7 @@
 function ProfileController(ProfileService) {
 
   let vm = this;
-
+  vm.editMode = false;
   init()
 
   function init() {
