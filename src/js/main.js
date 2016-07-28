@@ -10,6 +10,7 @@ import { LayoutController } from './controllers/layout.controller';
 import { HomeController } from './controllers/home.controller';
 import { RegisterController } from './controllers/register.controller';
 import { LoginController } from './controllers/login.controller';
+import { CreateProfileController } from './controllers/createprofile.controller';
 import { ProfileController } from './controllers/profile.controller';
 
 import { UserService } from './services/user.service';
@@ -23,6 +24,7 @@ angular
   .controller('HomeController', HomeController)
   .controller('RegisterController', RegisterController)
   .controller('LoginController', LoginController)
+  .controller('CreateProfileController', CreateProfileController)
   .controller('ProfileController', ProfileController)
   .service('UserService', UserService)
 ;

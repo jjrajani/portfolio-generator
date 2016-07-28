@@ -26,6 +26,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/profile.tpl.html',
       controller: 'ProfileController as vm'
     })
+    .state('root.createprofile', {
+      url: '/:username/createprofile',
+      templateUrl: 'templates/createprofile.tpl.html',
+      controller: 'CreateProfileController as vm'
+    })
 
     $urlRouterProvider.otherwise('/');
 
