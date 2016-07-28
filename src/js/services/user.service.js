@@ -6,6 +6,7 @@ function UserService (SERVER, $http, $cookies) {
   this.logOut     = logOut;
   this.isLoggedIn = isLoggedIn;
   this.headers    = headers;
+  this.userId     = userId;
 
   function signup (user) {
     return $http.post(SERVER.URL + 'signup', user);
@@ -31,6 +32,10 @@ function UserService (SERVER, $http, $cookies) {
   function headers () {
     let authToken = $cookies.get('access_token');
     return { headers: { 'Access-Token': authToken }};
+  }
+
+  function userId () {
+    return $cookies.get('user_id');
   }
 
 }
