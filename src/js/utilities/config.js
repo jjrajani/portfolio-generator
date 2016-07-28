@@ -31,6 +31,11 @@ function config ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/createprofile.tpl.html',
       controller: 'CreateProfileController as vm'
     })
+    // Portfolio Layout States
+    .state('humdrum', {
+      url: '/humdrum',
+      templateUrl: 'templates/layouts/humdrum.tpl.html'
+    })
 
     $urlRouterProvider.otherwise('/');
 
