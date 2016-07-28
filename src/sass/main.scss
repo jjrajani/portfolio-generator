@@ -5,10 +5,20 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
+// Layout Page
+
 
 .jumbotron {
   height: 400px;
   width: 1200px;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  clear: both;
 }
 
 // Login Page
@@ -175,12 +185,4 @@
       }
     }
   }
-}
-
-footer {
-  height: 100px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  clear: both;
 }
