@@ -1,13 +1,21 @@
 @import 'bulma';
 
+// ======================================
+// BEGIN GENERAL STYLES
 * {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-// Layout Page
 
-
+.hidden {
+  display: none;
+}
+// END GENERAL STYLES
+// ======================================
+// --------------------------------------
+// ======================================
+// BEGIN LAYOUT PAGE
 .jumbotron {
   height: 400px;
   width: 1200px;
@@ -20,6 +28,68 @@ footer {
   align-items: flex-end;
   clear: both;
 }
+// END LAYOUT PAGE
+// ======================================
+// --------------------------------------
+// ======================================
+// BEGIN HOME PAGE
+
+.top {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: 400px;
+    margin: 50px 0;
+  }
+  h1 {
+    margin: 0 5%;
+  }
+  h2 {
+    margin: 0 5% 0 10%;
+  }
+}
+.center {
+  display: flex;
+  justify-content: flex-start;
+  margin: 20px 0 10px 5%;
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-end;
+    margin: 50px 5% 0 0;
+    .review {
+      display: flex;
+      border: solid black 1px;
+      margin: 5px 0;
+      width: 90%;
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 15px;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+      }
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .reviews-header {
+    width: 40%;
+  }
+}
+
+// END HOME PAGE
+// ======================================
+// --------------------------------------
 // =============================================
 // BEGIN REGISTRATION FORM VALIDATION FORMATTING
 
@@ -41,9 +111,8 @@ footer {
 // END REGISTRATION FORM VALIDATION FORMATTING
 // ===========================================
 
-
-
-// Login Page
+// ===========================================
+// BEGIN LOGIN PAGE
 .login {
   width: 90%;
   margin: 50px auto;
@@ -64,7 +133,8 @@ footer {
   }
 }
 
-// Profile Page
+// ===========================================
+// BEGIN PROFILE PAGE
 
 .user-info-general {
   display: flex;
@@ -139,6 +209,7 @@ footer {
 }
 
 .editable {
+  position: relative;
   float: right;
   border: solid black 1px;
   width: 55%;
@@ -154,6 +225,20 @@ footer {
   form {
     width: 94%;
     margin: 5px 3%;
+    p {
+      margin: 0;
+    }
+    p.control {
+      margin: 0;
+    }
+    input {
+      margin: 0 0 0 10px;
+    }
+    .select {
+      position: absolute;
+      top: 45px;
+      right: -5px;
+    }
   }
   .select {
    margin: 5px 3%; 
@@ -162,15 +247,26 @@ footer {
     display: flex;
     width: 100%;
     height: 125px;
-    margin: 5px 0 10px 0;
+    margin: 5px 0 10px 10px;
+  }
+  button {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  i {
+    position: absolute;
+    right: 125px;
+    top: 15px;
+    font-size: 1.4em;
   }
 }
 
 .profile {
   .bottom {
     float: left;
-    width: 30%;
-    margin: 20px 0 0 5%;
+    width: 100%;
+
     border: solid black 1px;
     .recent-repos {
       display: flex;
@@ -208,3 +304,5 @@ footer {
     }
   }
 }
+// END PROFILE PAGE
+// ===========================================
