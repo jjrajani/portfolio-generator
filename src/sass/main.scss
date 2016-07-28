@@ -1,9 +1,31 @@
-@import 'bulma'; 
+@import 'bulma';
 
 .jumbotron {
   height: 400px;
   width: 1200px;
 }
+
+// =============================================
+// BEGIN REGISTRATION FORM VALIDATION FORMATTING
+
+.registration-form{
+  input.ng-invalid.ng-touched {
+    border-color: #FA787E;
+  }
+  input.ng-valid.ng-touched {
+    border-color: #78FA89;
+  }
+  .alert {
+    display: inline;
+    color: red;
+    font-size: 16px;
+    font-weight: 200;
+    text-shadow: 0px 0px 5px #ff4d4d;
+    }
+}
+// END REGISTRATION FORM VALIDATION FORMATTING
+// ===========================================
+
 
 // Login Page
 .login {
