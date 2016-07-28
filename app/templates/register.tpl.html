@@ -1,4 +1,5 @@
-<form ng-submit="vm.createUser(user)" name="Form">
+
+<form ng-submit="vm.createUser(user)" name="Form" class="registration-form" autocomplete="off">
   <p class="control">
     <input class="input" type="text" placeholder="First Name" ng-model="user.first_name" name="FName" required>
       <span class="alert" ng-show="Form.$submitted || Form.FName.$touched">
