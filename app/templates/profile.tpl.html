@@ -1,0 +1,22 @@
+<form class="profileForm" ng-submit="vm.createProfile(profile)">
+  <p class="control">
+    <input type="text" class="input" ng-model="profile.github_username" placeholder="Github Username">
+  </p>
+  <p class="control">
+    <input type="text" class="input" ng-model="profile.location" placeholder="Location">
+  </p>
+  <p class="control">
+    <textarea class="textarea" ng-model="profile.bio" placeholder="Bio"></textarea>
+  </p>
+  <p class="control">
+  <span class="select">
+    <select ng-model="profile.layout">
+      <option>Select dropdown</option>
+      <option value="1">HumDrum</option>
+      <option value="1">HerpDerp</option>
+    </select>
+  </span>
+</p>
+<button class="button">Submit</button>
+
+</form>

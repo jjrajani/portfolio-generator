@@ -20,7 +20,12 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: 'templates/login.tpl.html',
       controller: 'LoginController as vm'
-    });
+    })
+    .state('root.profile', {
+      url: '/:username/profile',
+      templateUrl: 'templates/profile.tpl.html',
+      controller: 'ProfileController as vm'
+    })
 
     $urlRouterProvider.otherwise('/');
 
