@@ -14,6 +14,7 @@ import { CreateProfileController } from './controllers/createprofile.controller'
 import { ProfileController } from './controllers/profile.controller';
 
 import { UserService } from './services/user.service';
+import { ProfileService } from './services/profile.service';
 
 angular
   .module('app', ['ui.router', 'ngCookies'])
@@ -27,5 +28,6 @@ angular
   .controller('CreateProfileController', CreateProfileController)
   .controller('ProfileController', ProfileController)
   .service('UserService', UserService)
+  .service('ProfileService', ProfileService)
 ;
 
