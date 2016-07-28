@@ -1,8 +1,9 @@
-function LayoutController (UserService, $rootScope) {
+function LayoutController (UserService, $rootScope, $stateParams) {
 
    let vm = this;
    vm.logOut = logOut;
    vm.loggedIn = false;
+   vm.username = UserService.getUser();
 
    init ()
 
@@ -14,11 +15,12 @@ function LayoutController (UserService, $rootScope) {
     vm.loggedIn = UserService.isLoggedIn();
   }
 
+  
   function logOut () {
     UserService.logOut();
     vm.loggedIn = false;
   }     
 }
 
-LayoutController.$inject = ['UserService', '$rootScope'];
+LayoutController.$inject = ['UserService', '$rootScope', '$stateParams'];
 export { LayoutController };
