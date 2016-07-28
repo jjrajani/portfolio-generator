@@ -4,8 +4,9 @@ function CreateProfileController ($state, UserService, ProfileService) {
   vm.createProfile = createProfile;
 
   function createProfile (profile) {
-    ProfileService.createProfile(profile);
-    $state.go('root.profile', {username: UserService.getUser()});
+    ProfileService.createProfile(profile).then( res => {
+      $state.go('root.profile', {username: UserService.getUser()});
+    });
   }
 
 
