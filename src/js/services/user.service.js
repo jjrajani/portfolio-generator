@@ -1,20 +1,40 @@
-function UserService (SERVER, $http) {
+function UserService (SERVER, $http, $cookies) {
 
-  this.signup = signup;
-  this.login = login;
+  this.signup     = signup;
+  this.login      = login;
+  this.getUser    = getUser;
+  this.logOut     = logOut;
+  this.isLoggedIn = isLoggedIn;
+  this.headers    = headers;
 
   function signup (user) {
-    console.log(user)
     return $http.post(SERVER.URL + 'signup', user);
   }
 
   function login (user) {
-    console.log(user)
     return $http.post(SERVER.URL + 'login', user);
+  }
+
+  function getUser () {
+    return $cookies.get('username')
+  }
+
+  function logOut () {
+    $cookies.remove('username');
+    $cookies.remove('access_token');
+  }
+
+  function isLoggedIn () {
+    return (this.getUser()) ? true : false;
+  }
+
+  function headers () {
+    let authToken = $cookies.get('access_token');
+    return { headers: { 'Access-Token': authToken }};
   }
 
 }
 
-UserService.$inject = ['SERVER', '$http']
+UserService.$inject = ['SERVER', '$http', '$cookies']
 
 export { UserService };
