@@ -26,6 +26,50 @@
   }
 }
 
+// Profile Page
+
+.user-info-general {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 50px 0;
+  margin-left: 5%;
+  .followers {
+    width: 200px;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+    }
+    .followers-string {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    .followers-number {
+      font-size: 2em;
+      font-weight: 600;
+    }
+    img {
+      display: flex;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+  }
+  .stared-repos {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    .stared-repo {
+      display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
 footer {
   height: 100px;
   display: flex;
