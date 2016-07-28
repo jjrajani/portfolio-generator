@@ -7,7 +7,7 @@ function RegisterController (UserService, $state, $cookies) {
       console.log(res.data)
       $cookies.put('access_token', res.data.access_token);
       $cookies.put('username', res.data.username);
-      $state.go('root.profile', {username: UserService.getUser()})
+      $state.go('root.createprofile', {username: UserService.getUser()})
     });
   } 
 }
