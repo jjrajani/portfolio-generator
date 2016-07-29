@@ -1,9 +1,11 @@
-function LayoutController (UserService, $rootScope, $stateParams) {
+function LayoutController (UserService, $rootScope, $stateParams, ProfileService, GithubService) {
 
    let vm = this;
    vm.logOut = logOut;
    vm.loggedIn = false;
    vm.username = UserService.getUser();
+   vm.gitProfile = {};
+   vm.repos = {};
 
    init ()
 
@@ -13,6 +15,15 @@ function LayoutController (UserService, $rootScope, $stateParams) {
 
   function init () {
     vm.loggedIn = UserService.isLoggedIn();
+
+    ProfileService.getProfile().then( res => {
+      vm.profile = res.data;
+      console.log(res.data);
+      GithubService.getProfile(vm.profile.user).then( res => {
+        vm.gitProfile = res.data;
+        vm.repos = res.data.repos;
+      });
+    });
   }
 
   
@@ -22,5 +33,5 @@ function LayoutController (UserService, $rootScope, $stateParams) {
   }     
 }
 
-LayoutController.$inject = ['UserService', '$rootScope', '$stateParams'];
+LayoutController.$inject = ['UserService', '$rootScope', '$stateParams', 'ProfileService', 'GithubService'];
 export { LayoutController };
