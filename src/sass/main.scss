@@ -28,6 +28,13 @@ footer {
   align-items: flex-end;
   clear: both;
 }
+.layout {
+  i {
+    font-size: 2em;
+    width: auto;
+  }  
+}
+
 // END LAYOUT PAGE
 // ======================================
 // --------------------------------------
@@ -61,7 +68,8 @@ footer {
     margin: 0 5% 0 0;
     .review {
       display: flex;
-      border: solid black 1px;
+      // border: solid black 1px;
+      padding: 10px 0;
       margin: 5px 0;
       width: 90%;
       border-radius: 3px;
