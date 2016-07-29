@@ -7,7 +7,7 @@ function ShareProfileController($state, $stateParams, UserService, $http, SERVER
 
 
   init()
-// YOU NEED TO PUT THIS INTO CONFIG / MAIN + USE STATEPARAPMS IN CONFIG
+// YOU NEED TO PUT THIS INTO CONFIG / MAIN + USE STATEPARAPMS IN CONFIG  
   function init() {
     GithubService.getUserProfile($stateParams.params.username).then( res => {
       vm.profile = res.data;
