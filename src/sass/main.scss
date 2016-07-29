@@ -542,6 +542,11 @@ $blue: #130662;
     border: solid black 2px;
     padding: 10px 0;
     border-radius: 3px;
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     // background-color: lighten($blue, 60%);
       p {
         font-size: 1.2em;

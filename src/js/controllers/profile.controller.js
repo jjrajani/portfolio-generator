@@ -9,6 +9,7 @@ function ProfileController(ProfileService, $state, UserService, $http, SERVER, G
   vm.newestFirstRepos = {};
   vm.recentlyUpdatedRepos = {};
   vm.stars = stars;
+  vm.showPortfolio = showPortfolio;
 
   init()
 
@@ -33,6 +34,17 @@ function ProfileController(ProfileService, $state, UserService, $http, SERVER, G
     ProfileService.updateProfile(profile).then( res => {
       $state.go('root.profile', {username: UserService.getUser()});
     });
+  }
+
+  function showPortfolio () {
+    console.log(vm.profile.user)
+    console.log(vm.profile.layout)
+    if (vm.profile.layout === 1) {
+      vm.profile.layout = 'humdrum'
+    } else {
+      vm.profile.layout = 'sodawater'
+    }
+    $state.go('humdrum', {username: vm.profile.user, layout: vm.profile.layout})
   }
 }
 

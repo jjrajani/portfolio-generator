@@ -80,6 +80,7 @@
           <p>My Orgs</p>
         </nav>
         <ul class="orgs">
+          <h1 class='subtitle' ng-hide="vm.gitProfile.orgs.length > 0">You are not currently a member of any organizations.</h1>
           <li class="org" ng-repeat="org in vm.gitProfile.orgs"><!-- ng-repeat through repos-->
             <p class="org-title">{{org.avatar_url}}</p>
             <p class="org-title">{{org.name}}</p>

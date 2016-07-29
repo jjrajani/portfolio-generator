@@ -33,7 +33,7 @@ function config ($stateProvider, $urlRouterProvider) {
     })
     // Portfolio Layout States
     .state('humdrum', {
-      url: '/:username/humdrum',
+      url: '/:username/:layout',
       templateUrl: 'templates/layouts/humdrum.tpl.html',
       controller: 'ShareProfileController as vm'
     })

@@ -30,7 +30,7 @@
   </div>
     
   <div class="editable">
-    <button class="button portfolio">Veiw Portfolio</button>
+    <button ng-click="vm.showPortfolio()" class="button portfolio">Veiw Portfolio</button>
     <i ng-click="vm.editMode = !vm.editMode" class="fa fa-pencil" aria-hidden="true"></i>
     <form ng-submit="vm.updateProfile(vm.profile)">
       <p class="git-hub-username"><span class="edit-label">Github User Name: </span>{{ vm.profile.github_username }}</p>
