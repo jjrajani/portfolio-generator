@@ -1,6 +1,6 @@
 function GithubService ($http, SERVER) {
 
-  this.getProfile = getProfile;
+  // this.getProfile = getProfile;
   this.newestFirst = newestFirst;
   this.recentlyUpdated = recentlyUpdated;
   this.getUserProfile = getUserProfile;
