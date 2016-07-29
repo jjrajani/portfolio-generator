@@ -51,19 +51,20 @@ footer {
 }
 .center {
   display: flex;
-  justify-content: flex-start;
-  margin: 20px 0 10px 5%;
+  justify-content: space-around;
+  margin: 50px 0 10px 5%;
   .reviews {
     display: flex;
     flex-direction: column;
     width: 80%;
     align-items: flex-end;
-    margin: 50px 5% 0 0;
+    margin: 0 5% 0 0;
     .review {
       display: flex;
       border: solid black 1px;
       margin: 5px 0;
       width: 90%;
+      border-radius: 3px;
       img {
         width: 75px;
         height: 75px;
@@ -305,15 +306,12 @@ footer {
 // -------------------------------------------
 // ===========================================
 // BEGIN HUMDRUM LAYOUT
+$darkgrey: #2B2B2B;
+$blue: #130662;
 
 .humdrum-container {
   width: 100%;
-  border-left: solid grey 2px;
-  border-right: solid grey 2px;
-  border-radius: 3px;
   header {
-    border-top: solid 2px grey;
-    border-radius: 3px;
     nav {
       .nav-left {
         a {
@@ -325,8 +323,7 @@ footer {
         h1 {
           font-size: 2.5em;
           margin: 10px 5px;
-          padding: 0;
-          padding-left: 40px;
+          padding: 0 10px 0 40px;
           border-bottom: solid 2px grey;
         }
       }
@@ -337,12 +334,10 @@ footer {
     }
   }
   .general {
-    border: solid pink 1px;
     display: flex;
     align-items: center;
     padding: 15px 0;
-    background-color: pink;
-    border-radius: 3px;
+    background-color: $darkgrey;
     .followers {
       width: 33%;
       display: flex;
@@ -382,12 +377,14 @@ footer {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border-top: solid grey 2px;
-    border-bottom: solid grey 2px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: white;
+    background-color: $blue;
     p {
       margin-top: 13px;
       letter-spacing: 0.15em;
-      border-bottom: solid grey 1px;
+      border-bottom: solid white 1px;
       padding: 0 8px 2px;
     }
     .languages {
@@ -400,20 +397,30 @@ footer {
       .language {
         letter-spacing: 0.15em;
         padding: 0 8px;
-        border-left: solid grey 1px;
-        border-right: solid grey 1px;
+        border-left: solid white 1px;
+        border-right: solid white 1px;
+        text-shadow: 0px 0px white;
+        -webkit-transition: font-size 1s, text-shadow 1s;
+        transition: font-size 1s, text-shadow 1s;
+      &:hover {
+        font-size: 1.3em;
+        text-shadow: 0px 0px 7px white; 
+      }
       }
     }
   }
   .bio {
-    width: 80%;
-    margin: 10px auto;
+    width: 100%;
+    padding: 10px 10%;
     text-align: justify;
     line-height: 1.5em;
+    background-color: lighten($darkgrey, 30%);
+    color: white;
     // border: solid green 1px;
     .subtitle {
       margin: 10px 0;
       font-weight: 600;
+      color: white;
     }
     p {
       border-bottom: solid 1px black;
@@ -442,11 +449,10 @@ footer {
     }
   }
   .sub-content {
+    background-color: $darkgrey;
     display: flex;
-    background-color: pink;
     border-radius: 3px;
-    padding-bottom: 40px;
-    margin-top: 20px;
+    padding: 20px 0 40px 0;
   }
   .repos {
     margin: 40px 0 0 5%;
@@ -518,7 +524,7 @@ footer {
     border: solid black 2px;
     padding: 10px 0;
     border-radius: 3px;
-    background-color: darken(#F5F7FA, 50%);
+    // background-color: lighten($blue, 60%);
     .orgs {
       display: flex;
       flex-wrap: wrap;
