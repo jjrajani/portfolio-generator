@@ -3,7 +3,7 @@
     <nav class="nav">
       <div class="nav-left">
         <a class="title nav-item" href="#"> <!-- Perhaps have user slogan -->
-          Inspiring Asperations TEST {{vm.repos}}
+          Inspiring Asperations
         </a>
       </div>
       <div class="nav-center">
@@ -22,7 +22,7 @@
     <div class="general">
       <div class="followers">
         <p class="string">Followers</p>
-        <p class="number">123</p>
+        <p class="number">{{vm.user_obj.followers}}</p>
       </div>
       <div class="img">
         <img ng-src="{{vm.user_obj.avatar_url}}">
@@ -57,138 +57,38 @@
         <h2 class="subtitle">Bio:</h2>
         <p><span class="feature">Featured Repo:</span> Name of repo set to link of repo</p>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>{{vm.profile.bio}}</p>
     </div>
     <div class="sub-content">
       <div class="repos">
         <nav> <!-- On click reorder repos by selected -->
-          <a class="active" href="">Repos</a> <!-- Date Created -->
-          <a href="">Recent Activity</a> <!-- Most recently updated -->
-          <a href="">Starred Repos</a><!-- Most Stars -->
+          <p>My Repos</p>
         </nav>
         <ul class="all-repos">
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
+          <li class="repo" ng-repeat="repo in vm.gitProfile.repos"><!-- ng-repeat through repos-->
+            <p class="repo-title">{{repo.name}} | {{repo.language}}</p>
             <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf ;skd a;sfj jfdskla; qwoeiruj none moqppwei jaasdo9er fj;a09e fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf ;skd a;sfj jfdskla; qwoeiruj none moqppwei jaasdo9er fj;a09e fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf ;skd a;sfj jfdskla; qwoeiruj none moqppwei jaasdo9er fj;a09e fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf ;skd a;sfj jfdskla; qwoeiruj none moqppwei jaasdo9er fj;a09e fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
-          </li>
-          <li class="repo"><!-- ng-repeat through repos-->
-            <p class="repo-title">Repo Name - Language</p>
-            <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
-            <i class="fa fa-star" aria-hidden="true">12</i>
+            <i class="fa fa-star" aria-hidden="true" ng-show="{{repo.stargazers_count > 0}}">{{repo.stargazers_count}}</i>
           </li>
         </ul>
       </div>
+      
+<!-- /////////// -->
+
       <div class="organizations">
+        <nav> <!-- On click reorder repos by selected -->
+          <p>My Orgs</p>
+        </nav>
         <ul class="orgs">
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
-          </li>
-          <li class="org">
-            <img src="https://www.placecage.com/c/90/90">
-            <p>Org Name</p>
+          <li class="org" ng-repeat="org in vm.gitProfile.orgs"><!-- ng-repeat through repos-->
+            <p class="org-title">{{org.avatar_url}}</p>
+            <p class="org-title">{{org.name}}</p>
           </li>
         </ul>
       </div>
+
+
+
     </div>
   </div>
 </div>
