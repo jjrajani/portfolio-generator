@@ -32,11 +32,20 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'CreateProfileController as vm'
     })
     // Portfolio Layout States
-    .state('humdrum', {
+    .state('portfolio', {
       url: '/:username/:layout',
-      templateUrl: 'templates/layouts/humdrum.tpl.html',
+      templateUrl: function ($stateParams) {
+        console.log($stateParams);
+        let template = $stateParams.layout;
+        return 'templates/layouts/' + template + '.tpl.html'
+      },
       controller: 'ShareProfileController as vm'
     })
+    // .state('sodawater', {
+    //   url: '/:username/:layout',
+    //   templateUrl: 'templates/layouts/sodawater.tpl.html',
+    //   controller: 'ShareProfileController as vm'
+    // })
 
     $urlRouterProvider.otherwise('/');
 

@@ -53,13 +53,14 @@
         <input type="text" name="page-title" placeholder="Portfolio Title" ng-model="vm.profile.page_title">
       </p>
 
-        <span class="select">
-          <select ng-model="vm.portfolio.layout_choice">
-            <option value="0">Layout</option>
-            <option value="1">HumDrum</option>
-            <option value="2">HerpDerp</option>
-          </select>
-        </span>
+        <p class="profile-layout_choice"><span class="edit-label">Portfolio Layout: </span>{{ vm.profile.layout_choice }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="text" name="page-layout_choice" placeholder="Portfolio Layout" ng-model="vm.profile.layout_choice">
+      </p>
+         <!--  <select ng-model="vm.portfolio.layout_choice">
+            <option value="1">humdrum</option>
+            <option value="2">sodawater</option>
+          </select> -->
 
       <p><span class="edit-label">Bio: </span>{{ vm.profile.bio }}</p>
       <p class="control" ng-class="{ hidden : !vm.editMode }">

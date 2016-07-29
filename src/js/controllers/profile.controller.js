@@ -38,13 +38,13 @@ function ProfileController(ProfileService, $state, UserService, $http, SERVER, G
 
   function showPortfolio () {
     console.log(vm.profile.user)
-    console.log(vm.profile.layout)
-    if (vm.profile.layout === 1) {
-      vm.profile.layout = 'humdrum'
-    } else {
-      vm.profile.layout = 'sodawater'
+    console.log(vm.profile.layout_choice)
+    if (vm.profile.layout_choice === 1) {
+      vm.profile.layout_choice = 'humdrum'
+    } else if (vm.profile.layout_choice === 2) {
+      vm.profile.layout_choice = 'sodawater'
     }
-    $state.go('humdrum', {username: vm.profile.user, layout: vm.profile.layout})
+    $state.go('portfolio', {username: vm.profile.user, layout: vm.profile.layout_choice})
   }
 }
 
