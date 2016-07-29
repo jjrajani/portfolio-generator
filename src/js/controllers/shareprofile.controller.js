@@ -5,7 +5,7 @@ function ShareProfileController($state, $stateParams, UserService, $http, SERVER
   vm.gitProfile = {};
   vm.repos = {};
 
-
+// vm.gitProfile.user_obj.
   init()
 // YOU NEED TO PUT THIS INTO CONFIG / MAIN + USE STATEPARAPMS IN CONFIG
   function init() {

@@ -25,11 +25,11 @@
         <p class="number">123</p>
       </div>
       <div class="img">
-        <img src="https://avatars0.githubusercontent.com/u/14117380?v=3&u=7a5ae3d828a233055b74fe516536d0135dd09062&s=140">
+        <img ng-src="{{vm.user_obj.avatar_url}}">
       </div>
       <div class="hireable">
-        <p ng-show="vm.hireable">Hireable</p>
-        <p ng-hide="vm.hireable">Currently Employed</p>
+        <p ng-show="{{vm.user_obj.hireable}}">Hireable</p>
+        <p ng-hide="{{vm.user_obj.hireable}}">Currently Employed</p>
       </div>
     </div>
     <div class="my-languages">
