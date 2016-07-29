@@ -6,11 +6,11 @@
       <p class="followers-number">{{vm.gitProfile[6][1].length || 0}}</p>
     </div>
     <ul class="stared-repos">
-    <h1 class="subtitle">Favorite Repos</h1>
-      <li class="stared-repo" ng-repeat="repo in repos">
+    <h1 class="subtitle">Repos</h1>
+      <li class="stared-repo" ng-repeat="repo in vm.newestFirstRepos">
         <div class="header">
-          <h3 class="subtitle">{{repo.name}}</h3>
-          <i class="fa fa-star" aria-hidden="true">{{repo.stargazers_count}}</i>
+          <a href="{{repo.html_url}}"><h3 class="subtitle">{{repo.name}}</h3></a>
+          <a href=""><i class="fa fa-star" aria-hidden="true" ng-show='vm.stars(repo)'>{{repo.stargazers_count}}</i></a>
         </div>
         <p>{{repo.description}}</p>
       </li>
@@ -18,40 +18,12 @@
     <div class="bottom">
     <ul class="recent-repos">
       <h1 class="subtitle">Recent Repo Activity</h1>
-      <li class="recent-repo">
+      <li class="recent-repo" ng-repeat="repo in vm.recentlyUpdatedRepos" >
         <div class="header">
-          <h3 class="subtitle">Repo Name</h3>
-          <i class="fa fa-star" aria-hidden="true">12</i>
+          <a href="{{repo.html_url}}"><h3 class="subtitle">{{repo.name}}</h3></a>
+          <a href=""><i class="fa fa-star" aria-hidden="true" ng-show='vm.stars(repo)'>{{repo.stargazers_count}}</i></a>
         </div>
-        <p>Repo Description</p>
-      </li>
-      <li class="recent-repo">
-        <div class="header">
-          <h3 class="subtitle">Repo Name</h3>
-          <i class="fa fa-star" aria-hidden="true">12</i>
-        </div>
-        <p>Repo Description</p>
-      </li>
-      <li class="recent-repo">
-        <div class="header">
-          <h3 class="subtitle">Repo Name</h3>
-          <i class="fa fa-star" aria-hidden="true">12</i>
-        </div>
-        <p>Repo Description</p>
-      </li>
-      <li class="recent-repo">
-        <div class="header">
-          <h3 class="subtitle">Repo Name</h3>
-          <i class="fa fa-star" aria-hidden="true">12</i>
-        </div>
-        <p>Repo Description</p>
-      </li>
-      <li class="recent-repo">
-        <div class="header">
-          <h3 class="subtitle">Repo Name</h3>
-          <i class="fa fa-star" aria-hidden="true">12</i>
-        </div>
-        <p>Repo Description</p>
+        <p>{{repo.description}}</p>
       </li>
     </ul>
   </div>

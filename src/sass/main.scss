@@ -179,11 +179,10 @@ footer {
     }
   }
   .stared-repos {
-    // width: 200px;
     width: 100%;
     border: solid black 1px;
-    display: flex;
-    flex-direction: column;
+    height: 300px;
+    overflow: scroll;
     h1 {
       display: flex;
       justify-content: center;
@@ -193,13 +192,19 @@ footer {
     .stared-repo {
       display: flex;
       flex-direction: column;
+      border-top: solid black 1px;
       .header {
         display: flex;
         justify-content: space-between;
         h3 {
-          margin: 5px 0 5px 5px;
+          margin: 5px;
           font-weight: 600;
           font-size: 1em;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         i {
           margin-right: 5px;
@@ -274,8 +279,8 @@ footer {
     width: 100%;
     border: solid black 1px;
     .recent-repos {
-      display: flex;
-      flex-direction: column;
+      height: 300px;
+      overflow: scroll;
       h1 {
         display: flex;
         justify-content: center;
@@ -285,13 +290,19 @@ footer {
       .recent-repo {
         display: flex;
         flex-direction: column;
+        border-bottom: solid black 1px;
         .header {
         display: flex;
         justify-content: space-between;
         h3 {
-          margin: 5px 0 5px 5px;
+          margin: 5px;
           font-weight: 600;
           font-size: 1em;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         i {
           margin-right: 5px;

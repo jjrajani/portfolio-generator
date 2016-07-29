@@ -6,19 +6,28 @@ function ProfileController(ProfileService, $state, UserService, $http, SERVER, G
   vm.gitProfile = {};
   vm.repos = {};
   vm.updateProfile = updateProfile;
+  vm.newestFirstRepos = {};
+  vm.recentlyUpdatedRepos = {};
+  vm.stars = stars;
 
   init()
 
   function init() {
     ProfileService.getProfile().then( res => {
       vm.profile = res.data;
-      console.log(res.data);
+      // console.log(res.data);
       GithubService.getProfile(vm.profile.user).then( res => {
         vm.gitProfile = res.data;
         vm.repos = res.data.repos;
         console.log(vm.repos);
+        vm.newestFirstRepos = GithubService.newestFirst(vm.repos);
+        vm.recentlyUpdatedRepos = GithubService.recentlyUpdated(vm.repos);
       });
     });
+  }
+
+  function stars(repo) {
+    return repo.stargasers_count > 0;
   }
 
   function updateProfile (profile) {
