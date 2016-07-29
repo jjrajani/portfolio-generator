@@ -4,6 +4,8 @@ function ShareProfileController($state, $stateParams, UserService, $http, SERVER
   vm.profile = {};
   vm.gitProfile = {};
   vm.repos = {};
+  vm.user_obj = {};
+
 
 
   init()
@@ -11,16 +13,14 @@ function ShareProfileController($state, $stateParams, UserService, $http, SERVER
   function init() {
     GithubService.getUserProfile($stateParams.params.username).then( res => {
       vm.profile = res.data;
-      console.log(res.data);
+      console.log("vm.profile: ", res.data);
       GithubService.getGitProfile(vm.profile.user).then( res => {
         vm.gitProfile = res.data;
         vm.repos = res.data.repos;
-        vm.userObject = res.data.user_obj
-        console.log(vm.gitProfile, "obj", res.data.user_obj);
+        vm.user_obj = res.data.user_obj;
+        console.log("vm.gitProfile: ", vm.gitProfile, "\nvm.user_obj: ", vm.user_obj);
       });
     });
-
-console.log($stateParams)
   }
 
 
