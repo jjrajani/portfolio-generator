@@ -12,6 +12,7 @@ import { RegisterController } from './controllers/register.controller';
 import { LoginController } from './controllers/login.controller';
 import { CreateProfileController } from './controllers/createprofile.controller';
 import { ProfileController } from './controllers/profile.controller';
+import { ShareProfileController } from './controllers/shareprofile.controller.js';
 
 import { UserService } from './services/user.service';
 import { ProfileService } from './services/profile.service';
@@ -28,8 +29,8 @@ angular
   .controller('LoginController', LoginController)
   .controller('CreateProfileController', CreateProfileController)
   .controller('ProfileController', ProfileController)
+  .controller('ShareProfileController', ShareProfileController)
   .service('UserService', UserService)
   .service('ProfileService', ProfileService)
   .service('GithubService', GithubService)
 ;
-
