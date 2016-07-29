@@ -1,6 +1,572 @@
-@import 'bulma'; 
+@import 'bulma';
 
+// ======================================
+// BEGIN GENERAL STYLES
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+// END GENERAL STYLES
+// ======================================
+// --------------------------------------
+// ======================================
+// BEGIN LAYOUT PAGE
 .jumbotron {
   height: 400px;
   width: 1200px;
 }
+
+footer {
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  clear: both;
+}
+.layout {
+  i {
+    font-size: 2em;
+    width: auto;
+  }  
+}
+
+// END LAYOUT PAGE
+// ======================================
+// --------------------------------------
+// ======================================
+// BEGIN HOME PAGE
+
+.top {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 100%;
+    height: 400px;
+    margin: 50px 0;
+  }
+  h1 {
+    margin: 0 5%;
+  }
+  h2 {
+    margin: 0 5% 0 10%;
+  }
+}
+.center {
+  display: flex;
+  justify-content: space-around;
+  margin: 50px 0 10px 5%;
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    align-items: flex-end;
+    margin: 0 5% 0 0;
+    .review {
+      display: flex;
+      // border: solid black 1px;
+      padding: 10px 0;
+      margin: 5px 0;
+      width: 90%;
+      border-radius: 3px;
+      img {
+        width: 75px;
+        height: 75px;
+        border-radius: 15px;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+      }
+      i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+  .reviews-header {
+    width: 40%;
+  }
+}
+
+// END HOME PAGE
+// ======================================
+// --------------------------------------
+// =============================================
+// BEGIN REGISTRATION FORM VALIDATION FORMATTING
+
+.registration-form{
+  input.ng-invalid.ng-touched {
+    border-color: #FA787E;
+  }
+  input.ng-valid.ng-touched {
+    border-color: #78FA89;
+  }
+  .alert {
+    display: inline;
+    color: red;
+    font-size: 16px;
+    font-weight: 200;
+    text-shadow: 0px 0px 5px #ff4d4d;
+    }
+}
+// END REGISTRATION FORM VALIDATION FORMATTING
+// ===========================================
+
+// ===========================================
+// BEGIN LOGIN PAGE
+.login {
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  form {
+    display: flex;
+    flex-direction: column;
+    min-width: 50%;
+    justify-content: center;
+    align-items: flex-start;
+    p {
+      width: 80%;
+    }
+  }
+  p.add {
+
+  }
+}
+
+// ===========================================
+// BEGIN PROFILE PAGE
+
+.user-info-general {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  float: left;
+  margin: 50px 0;
+  margin-left: 5%;
+  width: 30%;
+  border: solid purple 1px;
+  .followers {
+    border: solid black 1px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    p {
+      display: flex;
+      justify-content: center;
+      margin: 5px 0;
+    }
+    .followers-string {
+      font-size: 1.3em;
+      font-weight: 600;
+    }
+    .followers-number {
+      font-size: 2em;
+      font-weight: 600;
+    }
+    img {
+      display: flex;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+  }
+  .stared-repos {
+    width: 100%;
+    border: solid black 1px;
+    height: 300px;
+    overflow: scroll;
+    h1 {
+      display: flex;
+      justify-content: center;
+      font-weight: 600;
+      margin: 10px 0;
+    }
+    .stared-repo {
+      display: flex;
+      flex-direction: column;
+      border-top: solid black 1px;
+      .header {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          margin: 5px;
+          font-weight: 600;
+          font-size: 1em;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        i {
+          margin-right: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      p {
+        margin: 0 0 5px 10px;
+        font-weight: 300;
+        font-size: 1em;
+      }
+    }
+  }
+}
+
+.editable {
+  position: relative;
+  float: right;
+  border: solid black 1px;
+  width: 55%;
+  margin: 50px 5% 0 0;
+  .edit-label {
+    font-weight: 600;
+  }
+  p {
+    min-height: 30px;
+    width: 94%;
+    margin: 5px 3%;
+  }
+  form {
+    width: 94%;
+    margin: 5px 3%;
+    p {
+      margin: 0;
+    }
+    p.control {
+      margin: 0;
+    }
+    input {
+      margin: 0 0 0 10px;
+    }
+    .select {
+      position: absolute;
+      top: 45px;
+      right: 10px;
+    }
+  }
+  textarea {
+    display: flex;
+    width: 100%;
+    height: 125px;
+    margin: 5px 0 10px 10px;
+  }
+  button.portfolio {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+  i {
+    position: absolute;
+    right: 125px;
+    top: 15px;
+    font-size: 1.4em;
+  }
+}
+
+.profile {
+  .bottom {
+    float: left;
+    width: 100%;
+    border: solid black 1px;
+    .recent-repos {
+      height: 300px;
+      overflow: scroll;
+      h1 {
+        display: flex;
+        justify-content: center;
+        font-weight: 600;
+        margin: 10px 0;
+      }
+      .recent-repo {
+        display: flex;
+        flex-direction: column;
+        border-bottom: solid black 1px;
+        .header {
+        display: flex;
+        justify-content: space-between;
+        h3 {
+          margin: 5px;
+          font-weight: 600;
+          font-size: 1em;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        i {
+          margin-right: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      p {
+        margin: 0 0 5px 10px;
+        font-weight: 300;
+        font-size: 1em;
+      }
+      }
+    }
+  }
+}
+// END PROFILE PAGE
+// ===========================================
+// -------------------------------------------
+// ===========================================
+// BEGIN HUMDRUM LAYOUT
+$darkgrey: #2B2B2B;
+$blue: #130662;
+
+.humdrum-container {
+  width: 100%;
+  header {
+    nav {
+      .nav-left {
+        a {
+          padding-right: 40px;
+          margin: 10px 5px;
+        }
+      }
+      .nav-right {
+        h1 {
+          font-size: 2.5em;
+          margin: 10px 5px;
+          padding: 0 10px 0 40px;
+          border-bottom: solid 2px grey;
+        }
+      }
+    }
+    .icon {
+      font-size: 2.5em;
+      width: auto;
+    }
+  }
+  .general {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    background-color: $darkgrey;
+    .followers {
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-weight: 600;
+      }
+      .string{
+        font-size: 1.3em;
+      }
+      .number {
+        font-size: 2em;
+      }
+    }
+    .img { 
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 30%;
+      }
+    }
+    .hireable {
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      font-size: 1.3em;
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+  .my-languages {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: white;
+    background-color: $blue;
+    p {
+      margin-top: 13px;
+      letter-spacing: 0.15em;
+      border-bottom: solid white 1px;
+      padding: 0 8px 2px;
+    }
+    .languages {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin: 0 auto;
+      align-items: center;
+      margin-bottom: 15px;
+      .language {
+        letter-spacing: 0.15em;
+        padding: 0 8px;
+        border-left: solid white 1px;
+        border-right: solid white 1px;
+        text-shadow: 0px 0px white;
+        -webkit-transition: font-size 1s, text-shadow 1s;
+        transition: font-size 1s, text-shadow 1s;
+      &:hover {
+        font-size: 1.3em;
+        text-shadow: 0px 0px 7px white; 
+      }
+      }
+    }
+  }
+  .bio {
+    width: 100%;
+    padding: 10px 10%;
+    text-align: justify;
+    line-height: 1.5em;
+    background-color: lighten($darkgrey, 30%);
+    color: white;
+    // border: solid green 1px;
+    .subtitle {
+      margin: 10px 0;
+      font-weight: 600;
+      color: white;
+    }
+    p {
+      border-bottom: solid 1px black;
+      padding: 5px 0 15px 0px;
+    }
+  }
+  .featured {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    h2 {
+      border-bottom: solid 1px black;
+      padding: 5px 12px 5px 10px;
+    }
+    p {
+      border: none;
+      border-bottom: solid black 1px;
+      padding: 10px 0 5px 10px;
+    }
+    .feature {
+      font-weight: 600;
+      font-size: 1.2em;
+      margin: 0 5px;
+    }
+  }
+  .sub-content {
+    background-color: $darkgrey;
+    display: flex;
+    border-radius: 3px;
+    padding: 20px 0 40px 0;
+  }
+  .repos {
+    margin: 40px 0 0 5%;
+    width: 42.5%;
+    nav {
+      border: solid black 2px;
+      border-bottom: none;
+      display: flex;
+      border-radius: 3px 3px 0 0;
+      a {
+        font-size: 1em;
+        font-weight: 600;
+        padding: 5px 10px;
+        background-color: darken(#F5F7FA, 35%);
+        width: 35%;
+        text-align: center;
+        color: darken(#1FC8DB, 40%);
+        &.active {
+          color: #1FC8DB;
+          background-color: darken(#F5F7FA, 50%);
+        }
+      }
+    }
+    .all-repos {
+      border: solid black 2px;
+      max-height: 280px;
+      overflow: scroll;
+      border-radius: 0 0 3px 3px;
+      .repo {
+        border-top: solid black 1px;
+        border-bottom: solid black 1px;
+        display: flex;
+        flex-direction: column;
+        height: 70px;
+        position: relative;
+        background-color: darken(#F5F7FA, 35%);
+        background-color: darken(#F5F7FA, 10%);
+        .repo-title {
+          font-weight: 600;
+          border-bottom: solid black 1px;
+          display: inline-block;
+          margin: 0 auto 0 2px;
+          padding: 0 10px 0 3px;
+        }
+        .repo-description {
+          margin: 0 0 0 5px;
+          max-width: 80%;
+          height: 40px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;  
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        i {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+        }
+      }
+    }
+  }
+  .organizations {
+    display: flex;
+    width: 42.5%;
+    max-height: 312px;
+    overflow: scroll;
+    margin: 40px 5% 0 auto;
+    border: solid black 2px;
+    padding: 10px 0;
+    border-radius: 3px;
+    // background-color: lighten($blue, 60%);
+    .orgs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      .org { 
+        width: 110px;
+        text-align: center;
+        margin: 5px 0;
+        padding: 5px 0;
+        border: solid black 1px;
+        border-radius: 3px;
+        background-color: darken(#F5F7FA, 10%);
+        img {
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+
+
+
+// END HUMDRUM LAOUT
+// ===========================================
+
+

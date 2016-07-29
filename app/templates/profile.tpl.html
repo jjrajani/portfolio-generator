@@ -1,0 +1,74 @@
+<div class="profile">
+  <div class="user-info-general">
+    <div class="followers">
+      <img src="https://www.placecage.com/150/150">
+      <p class="followers-string">Followers</p>
+      <p class="followers-number">{{vm.gitProfile[6][1].length || 0}}</p>
+    </div>
+    <ul class="stared-repos">
+    <h1 class="subtitle">Repos</h1>
+      <li class="stared-repo" ng-repeat="repo in vm.newestFirstRepos">
+        <div class="header">
+          <a href="{{repo.html_url}}"><h3 class="subtitle">{{repo.name}}</h3></a>
+          <a href=""><i class="fa fa-star" aria-hidden="true" ng-show='vm.stars(repo)'>{{repo.stargazers_count}}</i></a>
+        </div>
+        <p>{{repo.description}}</p>
+      </li>
+    </ul>
+    <div class="bottom">
+    <ul class="recent-repos">
+      <h1 class="subtitle">Recent Repo Activity</h1>
+      <li class="recent-repo" ng-repeat="repo in vm.recentlyUpdatedRepos" >
+        <div class="header">
+          <a href="{{repo.html_url}}"><h3 class="subtitle">{{repo.name}}</h3></a>
+          <a href=""><i class="fa fa-star" aria-hidden="true" ng-show='vm.stars(repo)'>{{repo.stargazers_count}}</i></a>
+        </div>
+        <p>{{repo.description}}</p>
+      </li>
+    </ul>
+  </div>
+  </div>
+    
+  <div class="editable">
+    <button class="button portfolio">Veiw Portfolio</button>
+    <i ng-click="vm.editMode = !vm.editMode" class="fa fa-pencil" aria-hidden="true"></i>
+    <form ng-submit="vm.updateProfile(vm.profile)">
+      <p class="git-hub-username"><span class="edit-label">Github User Name: </span>{{ vm.profile.github_username }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="text" name="github-username" placeholder="Github User Name" ng-model="vm.profile.github_username">
+      </p>
+<!--
+      <p class="email"><span class="edit-label">Email: </span>jjrajani@gmail.com</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="email" name="email" placeholder="Email">
+      </p>-->
+
+      <p class="location"><span class="edit-label">Location: </span>{{ vm.profile.location }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="text" name="location" placeholder="Location" ng-model="vm.profile.location">
+      </p>
+
+      <p class="profile-title"><span class="edit-label">Portfolio Page Title: </span>{{ vm.profile.page_title }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <input type="text" name="page-title" placeholder="Portfolio Title" ng-model="vm.profile.page_title">
+      </p>
+
+        <span class="select">
+          <select ng-model="vm.portfolio.layout_choice">
+            <option value="0">Layout</option>
+            <option value="1">HumDrum</option>
+            <option value="2">HerpDerp</option>
+          </select>
+        </span>
+
+      <p><span class="edit-label">Bio: </span>{{ vm.profile.bio }}</p>
+      <p class="control" ng-class="{ hidden : !vm.editMode }">
+        <textarea ng-model="vm.profile.bio"></textarea>
+      </p>
+
+      <button ng-click="vm.editMode === true ? vm.editMode = false : vm.editMode = vm.editMode" class="button save">Save</button>
+
+    </form>
+
+  </div>
+</div>  

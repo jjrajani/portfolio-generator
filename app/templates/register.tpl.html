@@ -1,18 +1,35 @@
-<form ng-submit="vm.createUser(user)">
+
+<form ng-submit="vm.createUser(user)" name="Form" class="registration-form" autocomplete="off">
   <p class="control">
-    <input class="input" type="text" placeholder="First Name" ng-model="user.first_name">
+    <input class="input" type="text" placeholder="First Name" ng-model="user.first_name" name="FName" required>
+      <span class="alert" ng-show="Form.$submitted || Form.FName.$touched">
+        <span ng-show="Form.FName.$error.required">This is a required field.</span>
+      </span>
   </p>
   <p class="control">
-    <input class="input" type="text" placeholder="Last Name" ng-model="user.last_name">
+    <input class="input" type="text" placeholder="Last Name" ng-model="user.last_name"name="LName" required>
+      <span class="alert" ng-show="Form.$submitted || Form.LName.$touched">
+        <span ng-show="Form.LName.$error.required">This is a required field.</span>
+      </span>
   </p>
   <p class="control">
-    <input class="input" type="text" placeholder="User Name" ng-model="user.username">
+    <input class="input" type="text" placeholder="User Name" ng-model="user.username"name="UName" required>
+    <span class="alert" ng-show="Form.$submitted || Form.UName.$touched">
+      <span ng-show="Form.UName.$error.required">This is a required field.</span>
+    </span>
   </p>
   <p class="control">
-    <input class="input" type="email" placeholder="Email" ng-model="user.email">
+    <input class="input" type="email" placeholder="Email" ng-model="user.email"name="Email" required>
+      <span class="alert" ng-show="Form.$submitted || Form.Email.$touched">
+        <span ng-show="Form.Email.$error.required">This is a required field.</span>
+        <span ng-show="Form.Email.$error.email">This is not a valid email.</span>
+      </span>
   </p>
   <p class="control">
-    <input class="input" type="password" placeholder="Password" ng-model="user.password">
+    <input class="input" type="password" placeholder="Password" ng-model="user.password"name="Pass" required>
+    <span class="alert" ng-show="Form.$submitted || Form.Pass.$touched">
+      <span ng-show="Form.Pass.$error.required">This is a required field.</span>
+    </span>
   </p>
   <p class="control">
     <button class="button is-success">Register</button>

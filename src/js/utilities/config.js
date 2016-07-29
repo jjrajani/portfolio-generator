@@ -20,7 +20,22 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/login',
       templateUrl: 'templates/login.tpl.html',
       controller: 'LoginController as vm'
-    });
+    })
+    .state('root.profile', {
+      url: '/:username/profile',
+      templateUrl: 'templates/profile.tpl.html',
+      controller: 'ProfileController as vm'
+    })
+    .state('root.createprofile', {
+      url: '/:username/createprofile',
+      templateUrl: 'templates/createprofile.tpl.html',
+      controller: 'CreateProfileController as vm'
+    })
+    // Portfolio Layout States
+    .state('humdrum', {
+      url: '/humdrum',
+      templateUrl: 'templates/layouts/humdrum.tpl.html'
+    })
 
     $urlRouterProvider.otherwise('/');
 
