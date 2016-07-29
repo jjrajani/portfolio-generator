@@ -19,18 +19,18 @@ function LayoutController (UserService, $rootScope, $stateParams, ProfileService
     ProfileService.getProfile().then( res => {
       vm.profile = res.data;
       console.log(res.data);
-      GithubService.getProfile(vm.profile.user).then( res => {
+      GithubService.getGitProfile(vm.profile.user).then( res => {
         vm.gitProfile = res.data;
         vm.repos = res.data.repos;
       });
     });
   }
 
-  
+
   function logOut () {
     UserService.logOut();
     vm.loggedIn = false;
-  }     
+  }
 }
 
 LayoutController.$inject = ['UserService', '$rootScope', '$stateParams', 'ProfileService', 'GithubService'];
