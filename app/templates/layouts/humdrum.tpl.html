@@ -1,0 +1,80 @@
+<div class="humdrum-container">
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="title nav-item" href="#"> <!-- Perhaps have user slogan -->
+          Inspiring Asperations
+        </a>
+      </div>
+      <div class="nav-center">
+        <a class="nav-item" href="#"><!-- Link to User Github -->
+          <span class="icon">
+            <i class="fa fa-github"></i>
+          </span>
+        </a>
+      </div>
+      <div class="nav-right nav-menu">
+        <h1 class="subtitle nav-item">Sally Johnson</h1>
+      </div>
+    </nav>
+  </header>
+  <div class="main-content">
+    <div class="general">
+      <div class="followers">
+        <p class="string">Followers</p>
+        <p class="number">123</p>
+      </div>
+      <div class="img">
+        <img src="https://avatars0.githubusercontent.com/u/14117380?v=3&u=7a5ae3d828a233055b74fe516536d0135dd09062&s=140">
+      </div>
+      <div class="hireable">
+        <p ng-show="vm.hireable">Hireable</p>
+        <p ng-hide="vm.hireable">Currently Employed</p>
+      </div>
+    </div>
+    <div class="bio">
+      <h2 class="subtitle">Bio</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    <div class="featured">
+      <p>Featured Repo: Name of repo set to link of repo</p>
+    </div>
+    <div class="repos">
+      <nav> <!-- On click reorder repos by selected -->
+        <a href="#">Repos</a> <!-- Date Created -->
+        <a href="#">Recent Activity</a> <!-- Most recently updated -->
+        <a href="#">Starred Repos</a><!-- Most Stars -->
+      </nav>
+      <ul class="all-repos">
+        <li class="repo"><!-- ng-repeat through repos-->
+          <p class="repo-title">Repo Name</p>
+          <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
+          <i class="fa fa-star" aria-hidden="true">12</i>
+        </li>
+        <li class="repo"><!-- ng-repeat through repos-->
+          <p class="repo-title">Repo Name</p>
+          <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
+          <i class="fa fa-star" aria-hidden="true">12</i>
+        </li>
+        <li class="repo"><!-- ng-repeat through repos-->
+          <p class="repo-title">Repo Name</p>
+          <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
+          <i class="fa fa-star" aria-hidden="true">12</i>
+        </li>
+        <li class="repo"><!-- ng-repeat through repos-->
+          <p class="repo-title">Repo Name</p>
+          <p class="repo-description">Repo Descript asdfsda asdffdsa asdf fsa</p> <!-- Cut length -->
+          <i class="fa fa-star" aria-hidden="true">12</i>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+

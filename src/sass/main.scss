@@ -237,11 +237,8 @@ footer {
     .select {
       position: absolute;
       top: 45px;
-      right: -5px;
+      right: 10px;
     }
-  }
-  .select {
-   margin: 5px 3%; 
   }
   textarea {
     display: flex;
@@ -249,7 +246,7 @@ footer {
     height: 125px;
     margin: 5px 0 10px 10px;
   }
-  button {
+  button.portfolio {
     position: absolute;
     right: 10px;
     top: 10px;
@@ -266,7 +263,6 @@ footer {
   .bottom {
     float: left;
     width: 100%;
-
     border: solid black 1px;
     .recent-repos {
       display: flex;
@@ -306,3 +302,101 @@ footer {
 }
 // END PROFILE PAGE
 // ===========================================
+// -------------------------------------------
+// ===========================================
+// BEGIN HUMDRUM LAYOUT
+
+.humdrum-container {
+  width: 100%;
+  header {
+    nav {
+    }
+    .icon {
+      font-size: 2.5em;
+    }
+  }
+  .general {
+    border: solid pink 1px;
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    .followers {
+      width: 33%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+        font-weight: 600;
+      }
+      .string{
+        font-size: 1.3em;
+      }
+      .number {
+        font-size: 2em;
+      }
+    }
+    .img { 
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      img {
+        border-radius: 30%;
+      }
+    }
+    .hireable {
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      font-size: 1.3em;
+      p {
+        font-weight: 600;
+      }
+    }
+  }
+  .bio {
+    width: 80%;
+    margin: 10px auto;
+    text-align: justify;
+    line-height: 1.5em;
+    // border: solid green 1px;
+    .subtitle {
+      margin: 10px 0;
+      font-weight: 600;
+    }
+  }
+  .featured {
+    border: solid blue 1px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .repos {
+    border: solid red 1px;
+    width: 80%;
+    margin: 20px auto;
+    nav {
+      border: solid pink 1px;
+      display: flex;
+      justify-content: space-between;
+      a {
+        font-size: 1.2em;
+      }
+    }
+    .all-repos {
+      border: solid purple 1px;
+      .repo {
+        border: solid black 1px;
+        display: flex;
+        i {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+
+
+// END HUMDRUM LAOUT
+// ===========================================
+
+
