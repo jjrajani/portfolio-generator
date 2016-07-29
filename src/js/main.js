@@ -15,6 +15,7 @@ import { ProfileController } from './controllers/profile.controller';
 
 import { UserService } from './services/user.service';
 import { ProfileService } from './services/profile.service';
+import { GithubService } from './services/github.service';
 
 angular
   .module('app', ['ui.router', 'ngCookies'])
@@ -29,5 +30,6 @@ angular
   .controller('ProfileController', ProfileController)
   .service('UserService', UserService)
   .service('ProfileService', ProfileService)
+  .service('GithubService', GithubService)
 ;
 

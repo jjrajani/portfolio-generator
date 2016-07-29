@@ -1,7 +1,14 @@
-<header>
+<header class="layout">
   <nav class="nav">
     <div class="nav-left">
       <a class="nav-item" href="/#/">Profiler</a>
+    </div>
+
+    <div class="nav">
+      <div class="nav-center">
+      <!-- Add github url to link when logged in -->
+        <a class="nav-item" href="" ng-show="vm.loggedIn"><i class="fa fa-github" aria-hidden="true"></i></a>
+      </div>
     </div>
 
     <div class="nav-right nav-menu">
