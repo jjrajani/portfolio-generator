@@ -22,4 +22,4 @@ function HomeController() {
 }
 
 HomeController.$inject = [];
-export { HomeController }; 
+export { HomeController };
