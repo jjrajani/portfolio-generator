@@ -3,8 +3,12 @@ function GithubService ($http, SERVER) {
   this.getProfile = getProfile;
   this.newestFirst = newestFirst;
   this.recentlyUpdated = recentlyUpdated;
+  this.getUserProfile = getUserProfile;
+  this.getGitProfile  = getGitProfile;
 
-  function getProfile (github_username) {
+  // this.getRepos = getRepos;
+
+  function getGitProfile (github_username) {
     return $http.get(SERVER.URL + 'github/' + github_username);
   }
 
@@ -22,6 +26,10 @@ function GithubService ($http, SERVER) {
       let keyB = new Date(b.updated_at);
       return ((keyA > keyB) ? -1 : (keyA < keyB) ? 1: 0)
     })
+  }
+
+  function getUserProfile (site_username) {
+    return $http.get(SERVER.URL + 'profiles/' + site_username);
   }
 
 }

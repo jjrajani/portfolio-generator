@@ -15,8 +15,7 @@ function ProfileController(ProfileService, $state, UserService, $http, SERVER, G
   function init() {
     ProfileService.getProfile().then( res => {
       vm.profile = res.data;
-      // console.log(res.data);
-      GithubService.getProfile(vm.profile.user).then( res => {
+      GithubService.getGitProfile(vm.profile.user).then( res => {
         vm.gitProfile = res.data;
         vm.repos = res.data.repos;
         console.log(vm.repos);
